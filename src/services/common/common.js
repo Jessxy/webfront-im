@@ -24,7 +24,7 @@ export async function getMenus() {
 export async function login({ loginId, password, verifyCode }) {
     return request(apiPath.authcenter + "/api/login", {
         method: 'post',
-        data: { loginId, password, verifyCode, appCode: Constants.APPCODE }
+        data: { loginId, password, verifyCode, appCode: Constants.APP_CODE }
     });
 }
 

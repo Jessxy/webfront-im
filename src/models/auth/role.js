@@ -199,7 +199,7 @@ export default {
          * @param select
          */
         *queryRoleMenus({ payload }, { call, put, select }) {
-            const res = yield call(queryRoleMenus, { ...payload, appCode: Constants.APPCODE });
+            const res = yield call(queryRoleMenus, { ...payload, appCode: Constants.APP_CODE });
             if (res.data.resultCode === "ok") {
                 let content = res.data.content;
                 let roleMenus = [];

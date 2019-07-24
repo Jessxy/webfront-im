@@ -13,14 +13,14 @@ import Constants from '../../../config/Constants.config';
 export async function queryLessees({lesseeCode, lesseeName, status, page}) {
     return request(apiPath.authcenter + "/api/lessee/query", {
         method: 'get',
-        data: {lesseeCode, lesseeNameCn: lesseeName, status, page: page.page, size: page.size, appCode: Constants.APPCODE}
+        data: {lesseeCode, lesseeNameCn: lesseeName, status, page: page.page, size: page.size, appCode: Constants.APP_CODE}
     });
 }
 
 export async function queryAllLessees() {
     return request(apiPath.authcenter+"/api/lessee/queryall",{
         method:'get',
-        data: {appCode: Constants.APPCODE}
+        data: {appCode: Constants.APP_CODE}
     })
 }
 
@@ -58,7 +58,7 @@ export async function addLessee(data) {
         //     lesseeCode, openbank, openbankEn, revAccount, linkman, linkmanMobile,
         //     status,
         //     baseCity,
-        //     appCode: Constants.APPCODE
+        //     appCode: Constants.APP_CODE
         // }
     });
 }
@@ -112,7 +112,7 @@ export async function updateLessee(data) {
 export async function deleteLessee({lesseeId}) {
     return request(apiPath.authcenter + "/api/lessee/" + lesseeId + '/delete', {
         method: 'delete',
-        data: {appCode: Constants.APPCODE}
+        data: {appCode: Constants.APP_CODE}
     });
 }
 

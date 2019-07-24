@@ -1,5 +1,6 @@
-import request from '../../utils/request'
+import request from '../../utils/zbtrequest'
 import Constants from '../../../config/Constants.config';
+import {apiPath} from '../../../config/web.domain.config';
 
 /**
  * 查询用户列表
@@ -12,7 +13,7 @@ import Constants from '../../../config/Constants.config';
 export async function queryUserList({ lesseeCode, username, loginId, page }) {
     return request(apiPath.authcenter + "/api/user/query", {
         method: 'get',
-        data: { appCode: Constants.APPCODE, lesseeCode, username, loginId, page: page.page, size: page.size }
+        data: { appCode: Constants.APP_CODE, lesseeCode, username, loginId, page: page.page, size: page.size }
     });
 }
 
@@ -25,7 +26,7 @@ export async function queryUserList({ lesseeCode, username, loginId, page }) {
 export async function getUser({ userId }) {
     return request(apiPath.authcenter + "/api/user/" + userId, {
         method: 'get',
-        data:{appCode: Constants.APPCODE}
+        data:{appCode: Constants.APP_CODE}
     });
 }
 /**
@@ -37,7 +38,7 @@ export async function getUser({ userId }) {
 export async function getUserInfo() {
     return request(apiPath.authcenter + "/api/user/info", {
         method: 'get',
-        data:{appCode: Constants.APPCODE}
+        data:{appCode: Constants.APP_CODE}
     });
 }
 
@@ -54,7 +55,7 @@ export async function getUserInfo() {
 export async function addUser({ username, loginId, loginPwd, mobile, email, orgIds, roleIds, appCode }) {
     return request(apiPath.authcenter + "/api/user/create", {
         method: 'post',
-        data: { username, loginId, loginPwd, mobile, email, orgIds, roleIds, appCode: Constants.APPCODE }
+        data: { username, loginId, loginPwd, mobile, email, orgIds, roleIds, appCode: Constants.APP_CODE }
     });
 }
 
@@ -64,7 +65,7 @@ export async function addUser({ username, loginId, loginPwd, mobile, email, orgI
 export async function register({username, loginId, loginPwd, mobile, email,lesseeCode, appCode}) {
     return request(apiPath.authcenter+"/api/user/register",{
         method:'post',
-        data:{username, loginId, loginPwd, mobile, email,lesseeCode, appCode: Constants.APPCODE}
+        data:{username, loginId, loginPwd, mobile, email,lesseeCode, appCode: Constants.APP_CODE}
     })
 }
 
@@ -79,7 +80,7 @@ export async function register({username, loginId, loginPwd, mobile, email,lesse
 export async function configUserRole({ userId, roleIds }) {
     return request(apiPath.authcenter + "/api/user/"+userId+"/roles", {
         method: 'post',
-        data: {roleIds, appCode: Constants.APPCODE}
+        data: {roleIds, appCode: Constants.APP_CODE}
     });
 }
 
@@ -96,7 +97,7 @@ export async function configUserRole({ userId, roleIds }) {
 export async function updateUser( data ) {
     return request(apiPath.authcenter + "/api/user/update", {
         method: 'put',
-        data: { ...data, appCode: Constants.APPCODE }
+        data: { ...data, appCode: Constants.APP_CODE }
     });
 }
 
@@ -110,7 +111,7 @@ export async function updateUser( data ) {
 export async function resetPassword({ userId, loginPwd, appCode }) {
     return request(apiPath.authcenter + "/api/user/resetPassword", {
         method: 'put',
-        data: { userId, loginPwd, appCode: Constants.APPCODE }
+        data: { userId, loginPwd, appCode: Constants.APP_CODE }
     });
 }
 
@@ -123,7 +124,7 @@ export async function resetPassword({ userId, loginPwd, appCode }) {
  * @returns {Promise.<Object>}
  */
 export async function deleteUser({ userId }) {
-    return request(apiPath.authcenter + "/api/user/" + userId + "/delete/" + Constants.APPCODE, {
+    return request(apiPath.authcenter + "/api/user/" + userId + "/delete/" + Constants.APP_CODE, {
         method: 'delete'
     });
 }

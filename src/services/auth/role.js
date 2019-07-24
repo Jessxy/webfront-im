@@ -11,7 +11,7 @@ import Constants from '../../../config/Constants.config';
 export async function queryRoleList({ roleName, desc, page }) {
     return request(apiPath.authcenter + "/api/role/query", {
         method: 'get',
-        data: { roleName, desc, page: page.page, size: page.size, appCode: Constants.APPCODE }
+        data: { roleName, desc, page: page.page, size: page.size, appCode: Constants.APP_CODE }
     });
 }
 
@@ -24,7 +24,7 @@ export async function queryRoleList({ roleName, desc, page }) {
 export async function getRole({ roleId }) {
     return request(apiPath.authcenter + "/api/role/" + roleId, {
         method: 'get',
-        data: { appCode: Constants.APPCODE }
+        data: { appCode: Constants.APP_CODE }
     });
 }
 
@@ -35,7 +35,7 @@ export async function getRole({ roleId }) {
 export async function addRole({ roleName, desc }) {
     return request(apiPath.authcenter + "/api/role/create", {
         method: 'post',
-        data: { roleName, roleType: roleName, desc, appCode: Constants.APPCODE }
+        data: { roleName, roleType: roleName, desc, appCode: Constants.APP_CODE }
     });
 }
 
@@ -79,7 +79,7 @@ export async function configRoleRights({ roleId, rightsIds }) {
 export async function updateRole({ roleId, roleName, roleType, desc }) {
     return request(apiPath.authcenter + "/api/role/update", {
         method: 'put',
-        data: { roleId, roleName, roleType: roleName, desc, appCode: Constants.APPCODE }
+        data: { roleId, roleName, roleType: roleName, desc, appCode: Constants.APP_CODE }
     });
 }
 
@@ -102,7 +102,7 @@ export async function deleteRole({ roleId }) {
 export async function queryAllRoleList() {
     return request(apiPath.authcenter + "/api/role/all", {
         method: 'get',
-        data: { appCode: Constants.APPCODE }
+        data: { appCode: Constants.APP_CODE }
     });
 }
 

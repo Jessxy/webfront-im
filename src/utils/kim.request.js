@@ -10,7 +10,7 @@ export default class Request {
   static get(url, param) {
     return new Promise((resolve, reject) => {
       request.get(url, {
-        headers: { [Constants.ACJSESSIONID]: localStorage.getItem(Constants.ACJSESSIONID) },
+        headers: { [Constants.ACJSESSIONID]: sessionStorage.getItem(Constants.ACJSESSIONID) },
         ...param,
       }).then(res => {
         if (res.resultCode === 'SESSION_ERROR') {
@@ -34,7 +34,7 @@ export default class Request {
   static post(url, param) {
     return new Promise((resolve, reject) => {
       request.post(url, {
-        headers: { [Constants.ACJSESSIONID]: localStorage.getItem(Constants.ACJSESSIONID) },
+        headers: { [Constants.ACJSESSIONID]: sessionStorage.getItem(Constants.ACJSESSIONID) },
         ...param,
       }).then(res => {
         if (res.resultCode === 'SESSION_ERROR') {

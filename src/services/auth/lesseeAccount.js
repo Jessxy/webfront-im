@@ -72,7 +72,7 @@ export async function deleteById({id}) {
 export async function getLesseeById({id}) {
     return request(apiPath.authcenter + "/api/lesseeAccount/" + id, {
         method: 'get',
-        data: {appCode: Constants.APPCODE}
+        data: {appCode: Constants.APP_CODE}
     });
 }
 

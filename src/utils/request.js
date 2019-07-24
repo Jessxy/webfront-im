@@ -85,7 +85,7 @@ const request = extend({
   errorHandler, // 默认错误处理
   credentials: 'include', // 默认请求是否带上cookie
   params: { _channelType: 'ajax' },
-  headers: { [Constants.ACJSESSIONID]: localStorage.getItem(Constants.ACJSESSIONID) },
+  headers: { [Constants.ACJSESSIONID]: sessionStorage.getItem(Constants.ACJSESSIONID) },
   // prefix: apiPath,   //前缀
   // suffix: '.json', //    后缀, 比如某些场景 api 需要统一加 .json
   maxCache: 100, // 最大缓存个数, 超出后会自动清掉按时间最开始的一个

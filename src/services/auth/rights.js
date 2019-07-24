@@ -13,7 +13,7 @@ import Constants from '../../../config/Constants.config';
 export async function queryRightsList({ appCode, rightsValue, status, page }) {
     return request(apiPath.authcenter + "/api/rights", {
         method: 'get',
-        data: { appCode: Constants.APPCODE, rightsValue, status, page: page.page, size: page.size }
+        data: { appCode: Constants.APP_CODE, rightsValue, status, page: page.page, size: page.size }
     });
 }
 
@@ -41,7 +41,7 @@ export async function getRights({ rightsId }) {
 export async function addRights({ appCode, rightsValue, rightsName, status }) {
     return request(apiPath.authcenter + "/api/rights", {
         method: 'post',
-        data: { appCode: Constants.APPCODE, rightsValue, rightsName, status }
+        data: { appCode: Constants.APP_CODE, rightsValue, rightsName, status }
     });
 }
 
@@ -58,7 +58,7 @@ export async function addRights({ appCode, rightsValue, rightsName, status }) {
 export async function updateRights({ rightsId, appCode, rightsValue, rightsName, status }) {
     return request(apiPath.authcenter + "/api/rights", {
         method: 'put',
-        data: { rightsId, appCode: Constants.APPCODE, rightsValue, rightsName, status }
+        data: { rightsId, appCode: Constants.APP_CODE, rightsValue, rightsName, status }
     });
 }
 

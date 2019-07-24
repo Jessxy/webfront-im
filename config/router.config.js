@@ -374,7 +374,7 @@ export default [
         routes: [
           {
             name: 'user',
-            component: './Dashboard/Analysis',
+            component: './Auth/User',
             path: '/auth/user',
             authority: '/auth/user',
           },

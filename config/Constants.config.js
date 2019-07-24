@@ -1,5 +1,5 @@
 export default {
-  APP_CODE: 'lms',//全局的app code
+  APP_CODE: 'aeo_im',//全局的app code
   DEFAULT_PAGE: { page: 1, size: 10, totalRow: 0, totalPage: 0 },
   ACJSESSIONID: "ACJSESSIONID",
   USERNAME: "USERNAME",

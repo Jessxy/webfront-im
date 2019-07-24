@@ -188,7 +188,7 @@ export default class GlobalHeaderRight extends PureComponent {
                 src={currentUser.avatar}
                 alt="avatar"
               />
-              <span className={styles.name}>{localStorage.getItem(Constants.USERNAME)?localStorage.getItem(Constants.USERNAME):"未登录"}</span>
+              <span className={styles.name}>{sessionStorage.getItem(Constants.USERNAME)?sessionStorage.getItem(Constants.USERNAME):"未登录"}</span>
             </span>
           </HeaderDropdown>
         ) : (

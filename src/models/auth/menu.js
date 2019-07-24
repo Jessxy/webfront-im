@@ -42,7 +42,7 @@ export default {
          * @param select
          */
         *queryMenuList({ payload }, { call, put, select }) {
-            const res = yield call(queryMenus, { ...payload, appCode: Constants.APPCODE });
+            const res = yield call(queryMenus, { ...payload, appCode: Constants.APP_CODE });
             if (res.data.resultCode === "ok") {
                 let content = res.data.content;
                 yield put({
@@ -57,7 +57,7 @@ export default {
             }
         },
         *queryFirstLevelMenus({ }, { call, put, select }) {
-            const res = yield call(queryFirstLevelMenus, { appCode: Constants.APPCODE });
+            const res = yield call(queryFirstLevelMenus, { appCode: Constants.APP_CODE });
             if (res.data.resultCode === "ok") {
                 yield put({
                     type: 'refreshState',
@@ -74,7 +74,7 @@ export default {
          *
          */
         *queryParentMenuList({ }, { call, put, select }) {
-            const res = yield call(queryMenusTreeJSON, { resType: "treeJSON", appCode: Constants.APPCODE });
+            const res = yield call(queryMenusTreeJSON, { resType: "treeJSON", appCode: Constants.APP_CODE });
             if (res.data.resultCode === "ok") {
                 let content = res.data.content;
                 yield put({
@@ -97,7 +97,7 @@ export default {
          * @param select
          */
         *addMenu({ payload }, { call, put, select }) {
-            const res = yield call(addMenu, { appCode: Constants.APPCODE, menuName: payload.menuName, parentMenuId: payload.parentMenuId, icon: payload.icon, url: payload.url, weight: payload.weight, status: payload.status });
+            const res = yield call(addMenu, { appCode: Constants.APP_CODE, menuName: payload.menuName, parentMenuId: payload.parentMenuId, icon: payload.icon, url: payload.url, weight: payload.weight, status: payload.status });
             if (res.data.resultCode === "ok") {
                 message.info("创建成功！");
                 if (payload.onSuccess) payload.onSuccess();
@@ -129,7 +129,7 @@ export default {
          * @param select
          */
         *updateMenu({ payload }, { call, put, select }) {
-            const res = yield call(updateMenu, { menuId: payload.menuId, appCode: Constants.APPCODE, menuName: payload.menuName, parentMenuId: payload.parentMenuId, icon: payload.icon, url: payload.url, weight: payload.weight, status: payload.status });
+            const res = yield call(updateMenu, { menuId: payload.menuId, appCode: Constants.APP_CODE, menuName: payload.menuName, parentMenuId: payload.parentMenuId, icon: payload.icon, url: payload.url, weight: payload.weight, status: payload.status });
             if (res.data.resultCode === "ok") {
                 message.info("菜单更新成功！");
                 if (payload.onSuccess) payload.onSuccess();

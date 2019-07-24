@@ -28,8 +28,8 @@ export default {
         reloadAuthorized(); //todo 重新授权
       }
       if (response.content.sessionId !== null) {
-        localStorage[Constants.ACJSESSIONID] = response.content.sessionId;
-        localStorage[Constants.USERNAME] = response.content.userName; //todo kim-stamp 登录成功 ==> 设置session信息
+        sessionStorage[Constants.ACJSESSIONID] = response.content.sessionId;
+        sessionStorage[Constants.USERNAME] = response.content.userName; //todo kim-stamp 登录成功 ==> 设置session信息
         yield put({
           type: 'changeLoginStatus',
           payload: { ...response, status: 'ok' },
@@ -66,8 +66,8 @@ export default {
         },
       });
       reloadAuthorized(); //todo 重新授权
-      window.localStorage.setItem(Constants.ACJSESSIONID, null); //todo kim-stamp 登出清除sessionStorage信息
-      window.localStorage.setItem(Constants.USERNAME, null); //todo kim-stamp 登出清除sessionStorage信息
+      window.sessionStorage.setItem(Constants.ACJSESSIONID, null); //todo kim-stamp 登出清除sessionStorage信息
+      window.sessionStorage.setItem(Constants.USERNAME, null); //todo kim-stamp 登出清除sessionStorage信息
       // redirect
       if (window.location.pathname !== '/user/login') {
         yield put(
