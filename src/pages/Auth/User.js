@@ -94,7 +94,7 @@ const user = Form.create()(class User extends React.Component {
       type: 'authUser/queryAppRoles',
       payload: { userId }
     });
-    this.userAppRoles.refs.wrappedInstance.handleOpen()
+    this.userAppRoles.wrappedInstance.handleOpen();
   }
 
   onSwitch = (userId, checked) => {

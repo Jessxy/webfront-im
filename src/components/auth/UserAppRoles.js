@@ -26,7 +26,7 @@ class UserAppRoles extends React.Component {
             <Modal maskClosable={false} footer={footer} closable={true} visible={this.state.open} title="角色一览" confirmLoading={this.props.loading} onCancel={this.handleCancel.bind(this)}>
                 <Table loading={this.props.loading}
                     rowKey={record => record.app_name + "_" + record.role_desc}
-                    dataSource={this.props.user.appRoles}
+                    dataSource={this.props.authUser.appRoles}
                     columns={this.columns}
                     bordered={false}
                     size={'small'}
@@ -38,7 +38,7 @@ class UserAppRoles extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        loading: state.loading.models.user, user: state.user
+        loading: state.loading.models.authUser, authUser: state.authUser
     };
 }
 export default connect(mapStateToProps, null, null, { withRef: true })(UserAppRoles);

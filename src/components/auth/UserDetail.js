@@ -29,14 +29,14 @@ const userDetail = Form.create()(class UserDetail extends React.Component{
     handleConfirm = () =>{
         this.props.form.validateFields((errors, values) => {
             if (errors) return;
-            values.userId = this.props.user.dataSource && this.props.user.dataSource.userId ? this.props.user.dataSource.userId : null;
+            values.userId = this.props.authUser.dataSource && this.props.authUser.dataSource.userId ? this.props.authUser.dataSource.userId : null;
             if (this.state.type == OperatorConstant.add) {
                 if (values.loginPwd != values.confirmLoginPwd) {
                     message.error("两次输入的密码不一致")
                     return;
                 }
                 this.props.dispatch({
-                    type: 'user/addUser',
+                    type: 'authUser/addUser',
                         payload: {
                             ...values,
                             onSuccess: () => {
@@ -49,7 +49,7 @@ const userDetail = Form.create()(class UserDetail extends React.Component{
 
             if (this.state.type == OperatorConstant.update) {
                 this.props.dispatch({
-                    type: 'user/updateUser',
+                    type: 'authUser/updateUser',
                         payload: {
                             ...values,
                             onSuccess: () => {
@@ -66,7 +66,7 @@ const userDetail = Form.create()(class UserDetail extends React.Component{
                         return;
                     }
                     this.props.dispatch({
-                        type: 'user/resetPassword',
+                        type: 'authUser/resetPassword',
                              payload: {
                                 userId: values.userId,
                                 loginPwd: values.loginPwd,
@@ -88,7 +88,7 @@ const userDetail = Form.create()(class UserDetail extends React.Component{
         });
         let treeData = orgTreeList;
         let allRoles = this.props.role.allRoles;
-        let dataSource = this.props.user.dataSource;
+        let dataSource = this.props.authUser.dataSource;
         let formItemLayout = { labelCol:{ span:6 }, wrapperCol:{ span:14}};
         const { getFieldDecorator } = this.props.form;
         return(
@@ -280,7 +280,7 @@ const userDetail = Form.create()(class UserDetail extends React.Component{
 
 function mapStateToProps(state){
     return{
-        loading: state.loading.models.user, user: state.user, role: state.role, organization: state.organization
+        loading: state.loading.models.authUser, authUser: state.authUser, role: state.role, organization: state.organization
     };
 }
 
