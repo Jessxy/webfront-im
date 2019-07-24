@@ -34,42 +34,42 @@ export default [
       { path: '/', redirect: '/workbench/messageCenter', authority: ['user', '/workbench/messageCenter'] }, //todo kim-stamp 用户登录后的默认路径
 
 
-      {
-        name: 'dashboard',
-        icon: 'dashboard',
-        path: '/dashboard',
-        authority: ['/dashboard'],
-        routes: [
-          {
-            name: 'analysis',
-            component: './Dashboard/Analysis',
-            path: '/dashboard/analysis',
-            authority: ['/dashboard/analysis'],
-          },
-          {
-            name: 'users',
-            component: './Dashboard/Analysis',
-            path: '/dashboard/users',
-            authority: ['/dashboard/users'],
+      // {
+      //   name: 'dashboard',
+      //   icon: 'dashboard',
+      //   path: '/dashboard',
+      //   authority: ['/dashboard'],
+      //   routes: [
+      //     {
+      //       name: 'analysis',
+      //       component: './Dashboard/Analysis',
+      //       path: '/dashboard/analysis',
+      //       authority: ['/dashboard/analysis'],
+      //     },
+      //     {
+      //       name: 'users',
+      //       component: './Dashboard/Analysis',
+      //       path: '/dashboard/users',
+      //       authority: ['/dashboard/users'],
+      //
+      //     },
+      //     {
+      //       name: 'monitor',
+      //       component: './Dashboard/Monitor',
+      //       path: '/dashboard/monitor',
+      //       authority: ['/dashboard/monitor'],
+      //     },
+      //     {
+      //       name: 'workplace',
+      //       component: './Dashboard/Workplace',
+      //       path: '/dashboard/workplace',
+      //       authority: ['/dashboard/workplace'],
+      //     },
+      //   ],
+      // },
 
-          },
-          {
-            name: 'monitor',
-            component: './Dashboard/Monitor',
-            path: '/dashboard/monitor',
-            authority: ['/dashboard/monitor'],
-          },
-          {
-            name: 'workplace',
-            component: './Dashboard/Workplace',
-            path: '/dashboard/workplace',
-            authority: ['/dashboard/workplace'],
-          },
-        ],
-      },
 
-
-      //workbench
+      //workbench 工作台
       {
         name: 'workbench',
         icon: 'dashboard',
@@ -86,7 +86,7 @@ export default [
       },
 
 
-      //companyManage
+      //companyManage 境外供应商
       {
         name: 'companyManage',
         icon: 'customer-service',
@@ -105,40 +105,24 @@ export default [
             path: '/companyManage/intendedCompany',
             authority: '/companyManage/intendedCompany',
           },
-          {
-            name: 'dealtCompany',
-            component: './Forms/StepForm',
-            path: '/companyManage/dealtCompany',
-            authority: '/companyManage/dealtCompany',
-          },
-          {
-            name: 'marketInfo',
-            component: './Dashboard/Analysis',
-            path: '/companyManage/marketInfo',
-            authority: '/companyManage/marketInfo',
-          },
+          // {
+          //   name: 'dealtCompany',
+          //   component: './Forms/StepForm',
+          //   path: '/companyManage/dealtCompany',
+          //   authority: '/companyManage/dealtCompany',
+          // },
+          // {
+          //   name: 'marketInfo',
+          //   component: './Dashboard/Analysis',
+          //   path: '/companyManage/marketInfo',
+          //   authority: '/companyManage/marketInfo',
+          // },
 
         ],
       },
 
-      //supplierManage
-      {
-        name: 'supplierManage',
-        icon: 'robot',
-        path: '/supplierManage',
-        authority: '/supplierManage',
-        routes: [
-          {
-            name: 'suppliers',
-            component: './Forms/BasicForm',
-            path: '/supplierManage/suppliers',
-            authority: '/supplierManage/suppliers',
-          },
-        ],
-      },
 
-
-      //costMaintenance
+      //costMaintenance 审核管理
       {
         name: 'costMaintenance',
         icon: 'read',
@@ -163,17 +147,17 @@ export default [
             path: '/costMaintenance/supplierFare',
             authority: '/costMaintenance/supplierFare',
           },
-          {
-            name: 'localFee',
-            component: './Dashboard/Analysis',
-            path: '/costMaintenance/localFee',
-            authority: '/costMaintenance/localFee',
-          },
+          // {
+          //   name: 'localFee',
+          //   component: './Dashboard/Analysis',
+          //   path: '/costMaintenance/localFee',
+          //   authority: '/costMaintenance/localFee',
+          // },
         ],
       },
 
 
-      //profit
+      //profit  订单中心
       {
         name: 'profit',
         icon: 'read',
@@ -192,40 +176,17 @@ export default [
             path: '/profit/trailer',
             authority: '/profit/trailer',
           },
-          {
-            name: 'freight',
-            component: './Dashboard/Analysis',
-            path: '/profit/freight',
-            authority: '/profit/freight',
-          },
+          // {
+          //   name: 'freight',
+          //   component: './Dashboard/Analysis',
+          //   path: '/profit/freight',
+          //   authority: '/profit/freight',
+          // },
         ],
       },
 
 
-      //quotation
-      {
-        name: 'quotation',
-        icon: 'read',
-        path: '/quotation',
-        authority: '/quotation',
-        routes: [
-          {
-            name: 'quotationFee',
-            component: './Dashboard/Analysis',
-            path: '/quotation/quotationFee',
-            authority: '/quotation/quotationFee',
-          },
-          {
-            name: 'quotationRecord',
-            component: './Dashboard/Analysis',
-            path: '/quotation/quotationRecord',
-            authority: '/quotation/quotationRecord',
-          },
-        ],
-      },
-
-
-      //logisticsOrder
+      //logisticsOrder 资金管理
       {
         icon: 'read',
         name: 'logisticsOrder',
@@ -252,65 +213,41 @@ export default [
             path: '/logisticsOrder/acceptOrders',
             authority: '/logisticsOrder/acceptOrders',
           },
-
-          {
-            name: 'orderQueryOpe',
-            component: './Dashboard/Analysis',
-            path: '/logisticsOrder/orderQueryOpe',
-            authority: '/logisticsOrder/orderQueryOpe',
-          },
-          {
-            name: 'quickBooking',
-            component: './Dashboard/Analysis',
-            path: '/logisticsOrder/quickBooking',
-            authority: '/logisticsOrder/quickBooking',
-          },
-          {
-            name: 'revenue',
-            component: './Dashboard/Analysis',
-            path: '/logisticsOrder/revenue',
-            authority: '/logisticsOrder/revenue',
-          },
-          {
-            name: 'batchVerificate',
-            component: './Dashboard/Analysis',
-            path: '/logisticsOrder/batchVerificate',
-            authority: '/logisticsOrder/batchVerificate',
-          }, {
-            name: 'onlineBooking',
-            component: './Dashboard/Analysis',
-            path: '/logisticsOrder/onlineBooking',
-            authority: '/logisticsOrder/onlineBooking',
-          },
+          //
+          // {
+          //   name: 'orderQueryOpe',
+          //   component: './Dashboard/Analysis',
+          //   path: '/logisticsOrder/orderQueryOpe',
+          //   authority: '/logisticsOrder/orderQueryOpe',
+          // },
+          // {
+          //   name: 'quickBooking',
+          //   component: './Dashboard/Analysis',
+          //   path: '/logisticsOrder/quickBooking',
+          //   authority: '/logisticsOrder/quickBooking',
+          // },
+          // {
+          //   name: 'revenue',
+          //   component: './Dashboard/Analysis',
+          //   path: '/logisticsOrder/revenue',
+          //   authority: '/logisticsOrder/revenue',
+          // },
+          // {
+          //   name: 'batchVerificate',
+          //   component: './Dashboard/Analysis',
+          //   path: '/logisticsOrder/batchVerificate',
+          //   authority: '/logisticsOrder/batchVerificate',
+          // }, {
+          //   name: 'onlineBooking',
+          //   component: './Dashboard/Analysis',
+          //   path: '/logisticsOrder/onlineBooking',
+          //   authority: '/logisticsOrder/onlineBooking',
+          // },
         ],
       },
 
 
-      //finance
-      {
-        name: 'finance',
-        icon: 'read',
-        path: '/finance',
-        authority: '/finance',
-        routes: [
-          {
-            name: 'revenue',
-            component: './Dashboard/Analysis',
-            path: '/finance/revenue',
-            authority: '/finance/revenue',
-          },
-
-          {
-            name: 'payment',
-            component: './Dashboard/Analysis',
-            path: '/finance/payment',
-            authority: '/finance/payment',
-          },
-        ],
-      },
-
-
-      //quotationSupport
+      //quotationSupport 基础数据
       {
         icon: 'read',
         name: 'quotationSupport',
@@ -358,7 +295,7 @@ export default [
       },
 
 
-      //profitReport
+      //profitReport 报表管理
       {
         icon: 'read',
         name: 'profitReport',
@@ -428,7 +365,7 @@ export default [
       },
 
 
-      //auth
+      //auth 授权中心
       {
         icon: 'read',
         name: 'auth',

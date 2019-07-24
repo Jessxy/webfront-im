@@ -17,46 +17,36 @@ export default {
 
 
 
-  'menu.companyManage': '客户管理',
-  'menu.companyManage.businessPool': '商机池',
-  'menu.companyManage.intendedCompany': '意向客户',
-  'menu.companyManage.dealtCompany': '成交客户',
-  'menu.companyManage.marketInfo': '营销线索',
+  'menu.companyManage': '境外供应商',
+  'menu.companyManage.businessPool': '供应商管理',
+  'menu.companyManage.intendedCompany': '供应商详情',
+  // 'menu.companyManage.dealtCompany': '成交客户',
+  // 'menu.companyManage.marketInfo': '营销线索',
 
-  'menu.supplierManage': '供应商管理',
-  'menu.supplierManage.suppliers': '合作供应商',
 
-  'menu.costMaintenance': '成本管理',
-  'menu.costMaintenance.declareFee': '报关费',
-  'menu.costMaintenance.trailerFee': '拖车费',
-  'menu.costMaintenance.supplierFare': '海运费',
-  'menu.costMaintenance.localFee': '本地费（海运）',
+  'menu.costMaintenance': '审核管理',
+  'menu.costMaintenance.declareFee': '业务合同审核',
+  'menu.costMaintenance.trailerFee': '供应商审核',
+  'menu.costMaintenance.supplierFare': '产品审核',
+  // 'menu.costMaintenance.localFee': '本地费（海运）',
 
 
 
-  'menu.profit': '利润管理',
-  'menu.profit.declare': '报关利润',
-  'menu.profit.trailer': '拖车利润',
-  'menu.profit.freight': '海运利润',
+  'menu.profit': '订单中心',
+  'menu.profit.declare': '订单管理',
+  'menu.profit.trailer': '通关审批',
+  // 'menu.profit.freight': '海运利润',
 
 
-  'menu.quotation': '报价管理',
-  'menu.quotation.quotationFee': '运价查询',
-  'menu.quotation.quotationRecord': '报价单',
-
-  'menu.logisticsOrder': '订单中心',
-  'menu.logisticsOrder.orderQueryBus': '交接单查询',
-  'menu.logisticsOrder.deliveryReceipt': '新增交接单',
-  'menu.logisticsOrder.acceptOrders': '接单查询',
-  'menu.logisticsOrder.orderQueryOpe': '订单处理',
-  'menu.logisticsOrder.quickBooking': '快速订舱',
-  'menu.logisticsOrder.revenue': '来帐认领',
-  'menu.logisticsOrder.batchVerificate': '账单核对',
-  'menu.logisticsOrder.onlineBooking': '官网在线订舱',
-
-  'menu.finance': '财务管理',
-  'menu.finance.revenue': '来账管理',
-  'menu.finance.payment': '付款管理',
+  'menu.logisticsOrder': '资金管理',
+  'menu.logisticsOrder.orderQueryBus': '付汇审批',
+  'menu.logisticsOrder.deliveryReceipt': '税费审批',
+  'menu.logisticsOrder.acceptOrders': '杂费审批',
+  // 'menu.logisticsOrder.orderQueryOpe': '订单处理',
+  // 'menu.logisticsOrder.quickBooking': '快速订舱',
+  // 'menu.logisticsOrder.revenue': '来帐认领',
+  // 'menu.logisticsOrder.batchVerificate': '账单核对',
+  // 'menu.logisticsOrder.onlineBooking': '官网在线订舱',
 
 
   'menu.quotationSupport': '基础业务数据',
